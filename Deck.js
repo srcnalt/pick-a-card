@@ -58,6 +58,17 @@ class Deck {
 
     this.cards = cards;
   }
+
+  random(args = {}){
+    const min = args.min || 0;
+    const max = args.max || 0;
+    const ran = Math.random();
+
+    if(min == 0 && max == 0)
+      return Math.floor(ran * this.cards.length);
+    else
+      return Math.floor((max - min + 1)*ran + min);
+  }
 }
 
 module.exports = Deck;
