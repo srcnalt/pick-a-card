@@ -2,8 +2,7 @@ const Card = require('./Card')
 
 class Deck {  
   constructor (args = {}) {
-
-    this.jokers = args.jokers || true;
+    this.jokers = args.jokers || false;
 
     this.cards = [];
 
