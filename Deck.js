@@ -31,15 +31,26 @@ class Deck {
     }
   }
 
-  pickOne () {
-    const index = Math.floor(Math.random() * this.cards.length);
-    return this.cards.splice(index, 1); 
-  }
-
   //pick n number of cards randomly or from top 
-  pickSome (args = {}) {
-    top = args.top || false;
-    count = args.count || 1;
+  pick (args = {}) {
+    const position = args.position || 'random';  //top, bottom, random
+    const count = args.count || 1;
+    
+    switch(position){
+      case 'top':
+        return this.cards.splice(0, count);
+        break;
+      case 'bottom':
+        return this.cards.splice(-count, count);
+        break
+      default:
+        let picks = [];
+        for (let i = 0; i < count; i++) {
+          let index = this.random();
+          picks.push(...this.cards.splice(index, 1));
+        }
+        return picks;
+    }
   }
 
   //check n number of cards randomly or from top
@@ -67,7 +78,7 @@ class Deck {
     if(min == 0 && max == 0)
       return Math.floor(ran * this.cards.length);
     else
-      return Math.floor((max - min + 1)*ran + min);
+      return Math.floor((max - min + 1) * ran + min);
   }
 }
 
