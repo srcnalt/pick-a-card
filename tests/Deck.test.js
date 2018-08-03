@@ -19,3 +19,13 @@ describe('Deck', () => {
     expect(deck.jokers).toBe(false);
   });
 });
+
+describe('Pick', () => {
+  test('without parameters should extract a random card from the deck', () => {
+    const deck = new Deck();
+    const card = deck.pick()[0];
+    expect(card.constructor.name).toBe('Card');
+    expect(deck.cards.length).toBe(51);
+  });
+
+});
