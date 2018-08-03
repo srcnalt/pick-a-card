@@ -28,4 +28,10 @@ describe('Pick', () => {
     expect(deck.cards.length).toBe(51);
   });
 
+  test('with count 3 parameter extracts 3 random cards from the deck', () => {
+    const deck = new Deck();
+    const cards = deck.pick({count: 3});
+    expect(cards.length).toBe(3);
+    expect(deck.cards.length).toBe(49);
+  });
 });
