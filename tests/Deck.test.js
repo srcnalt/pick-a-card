@@ -34,4 +34,13 @@ describe('Pick', () => {
     expect(cards.length).toBe(3);
     expect(deck.cards.length).toBe(49);
   });
+
+  test('with parameter top:true extracts 1 cards from the top of the deck', () => {
+    const deck = new Deck();
+    const cards = deck.pick({position: 'top'});
+    expect(cards.length).toBe(1);
+    expect(deck.cards.length).toBe(51);
+    expect(cards[0].face).toBe("ace");
+  });
+
 });
