@@ -28,19 +28,27 @@ describe('Pick', () => {
     expect(deck.cards.length).toBe(51);
   });
 
-  test('with count 3 parameter extracts 3 random cards from the deck', () => {
+  test('with parameter count:3 extracts 3 random cards from the deck', () => {
     const deck = new Deck();
     const cards = deck.pick({count: 3});
     expect(cards.length).toBe(3);
     expect(deck.cards.length).toBe(49);
   });
 
-  test('with parameter top:true extracts 1 cards from the top of the deck', () => {
+  test('with parameter position:top extracts 1 cards from the top of the deck', () => {
     const deck = new Deck();
     const cards = deck.pick({position: 'top'});
     expect(cards.length).toBe(1);
     expect(deck.cards.length).toBe(51);
     expect(cards[0].face).toBe("ace");
+  });
+
+  test('with parameter position:bottom extracts 1 card from the bottom of the deck', () => {
+    const deck = new Deck();
+    const cards = deck.pick({position: 'bottom'});
+    expect(cards.length).toBe(1);
+    expect(deck.cards.length).toBe(51);
+    expect(cards[0].face).toBe("king");
   });
 
 });
