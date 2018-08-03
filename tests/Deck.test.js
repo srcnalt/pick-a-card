@@ -50,5 +50,11 @@ describe('Pick', () => {
     expect(deck.cards.length).toBe(51);
     expect(cards[0].face).toBe("king");
   });
-
+  
+  test('with parameter position:random extracts 1 random card from the deck', () => {
+    const deck = new Deck();
+    const cards = deck.pick({position: 'random'});
+    expect(cards.length).toBe(1);
+    expect(deck.cards.length).toBe(51);
+  });
 });
