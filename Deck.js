@@ -53,9 +53,25 @@ class Deck {
   }
 
   //check n number of cards randomly or from top
-  checkSome (count = 1) {
-    top = args.top || false;
-    count = args.count || 1;
+  check (args = {}) {
+    const position = args.position || 'random';
+    const count = args.count || 1;
+
+    switch(position){
+      case 'top':
+        return this.cards.slice(0, count);
+        break;
+      case 'bottom':
+        return this.cards.slice(-count, count);
+        break
+      default:
+        let picks = [];
+        for (let i = 0; i < count; i++) {
+          let index = this.random();
+          picks.push(...this.cards.slice(index, index + 1));
+        }
+        return picks;
+    }
   }
 
   shuffle () {
