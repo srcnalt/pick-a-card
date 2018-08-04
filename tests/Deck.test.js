@@ -77,3 +77,12 @@ describe('Pick', () => {
     expect(cards[1].face).toBe("king");
   });
 });
+
+describe('Check', () => {
+  test('without parameters should reveal a random card from the deck', () => {
+    const deck = new Deck();
+    const card = deck.check()[0];
+    expect(card.constructor.name).toBe('Card');
+    expect(deck.cards.length).toBe(52);
+  });
+})
