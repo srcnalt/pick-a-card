@@ -6,8 +6,9 @@ class Deck {
 
     this.cards = [];
 
-    this.suits = ["club", "diamond", "heart", "spade"];
-    this.faces = ["ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "jack", "queen", "king"];
+    this.suits  = ["club", "diamond", "heart", "spade"];
+    this.faces  = ["ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "jack", "queen", "king"];
+    this.values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
 
     this.create();
   }
@@ -17,7 +18,8 @@ class Deck {
       for(let j = 0; j < 13; j++) {
         const card = new Card({
           suit: this.suits[i],
-          face: this.faces[j]
+          face: this.faces[j],
+          value: this.values[j]
         });
 
         this.cards.push(card);
