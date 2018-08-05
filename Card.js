@@ -2,6 +2,7 @@ class Card {
   constructor(args = {}) {
     this.suit = args.suit || "";
     this.face = args.face || "joker";
+    this.value = args.value || 0;
     this.joker = args.joker || false;
   }
 
@@ -10,7 +11,7 @@ class Card {
       return this.face;
     }
     else{
-      return `${this.face} of ${this.suit}s`;
+      return `${this.face} of ${this.suit}s with value of ${this.value}`;
     }
   }
 }
