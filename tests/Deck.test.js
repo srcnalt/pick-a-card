@@ -1,4 +1,9 @@
 const Deck = require('../classes/Deck');
+let deck;
+
+beforeEach(() => {
+  deck = new Deck();
+});
 
 describe('Deck', () => {
   test('with parameter creates a deck with jokers', () => {
@@ -14,7 +19,6 @@ describe('Deck', () => {
   });
 
   test('without parameter creates a deck without jokers', () => {
-    const deck = new Deck();
     expect(deck.cards.length).toBe(52);
     expect(deck.jokers).toBe(false);
   });
@@ -22,21 +26,18 @@ describe('Deck', () => {
 
 describe('Pick', () => {
   test('without parameters should extract a random card from the deck', () => {
-    const deck = new Deck();
     const card = deck.pick()[0];
     expect(card.constructor.name).toBe('Card');
     expect(deck.cards.length).toBe(51);
   });
 
   test('with parameter count:3 extracts 3 random cards from the deck', () => {
-    const deck = new Deck();
     const cards = deck.pick({count: 3});
     expect(cards.length).toBe(3);
     expect(deck.cards.length).toBe(49);
   });
 
   test('with parameter position:top extracts 1 cards from the top of the deck', () => {
-    const deck = new Deck();
     const cards = deck.pick({position: 'top'});
     expect(cards.length).toBe(1);
     expect(deck.cards.length).toBe(51);
@@ -44,7 +45,6 @@ describe('Pick', () => {
   });
 
   test('with parameter position:bottom extracts 1 card from the bottom of the deck', () => {
-    const deck = new Deck();
     const cards = deck.pick({position: 'bottom'});
     expect(cards.length).toBe(1);
     expect(deck.cards.length).toBe(51);
@@ -52,14 +52,12 @@ describe('Pick', () => {
   });
   
   test('with parameter position:random extracts 1 random card from the deck', () => {
-    const deck = new Deck();
     const cards = deck.pick({position: 'random'});
     expect(cards.length).toBe(1);
     expect(deck.cards.length).toBe(51);
   });
 
   test('with parameter position:top, count:3 extracts 3 cards from the top of the deck', () => {
-    const deck = new Deck();
     const cards = deck.pick({position: 'top', count: 3});
     expect(cards.length).toBe(3);
     expect(deck.cards.length).toBe(49);
@@ -69,7 +67,6 @@ describe('Pick', () => {
   });
   
   test('with parameter position:bottom, count:2 extracts 2 cards from the top of the deck', () => {
-    const deck = new Deck();
     const cards = deck.pick({position: 'bottom', count: 2});
     expect(cards.length).toBe(2);
     expect(deck.cards.length).toBe(50);
@@ -80,21 +77,18 @@ describe('Pick', () => {
 
 describe('Check', () => {
   test('without parameters should reveal a random card from the deck', () => {
-    const deck = new Deck();
     const card = deck.check()[0];
     expect(card.constructor.name).toBe('Card');
     expect(deck.cards.length).toBe(52);
   });
 
   test('with parameter count:3 reveals 3 random cards from the deck', () => {
-    const deck = new Deck();
     const cards = deck.check({count: 3});
     expect(cards.length).toBe(3);
     expect(deck.cards.length).toBe(52);
   });
 
   test('with parameter position:top reveals 1 cards from the top of the deck', () => {
-    const deck = new Deck();
     const cards = deck.check({position: 'top'});
     expect(cards.length).toBe(1);
     expect(deck.cards.length).toBe(52);
@@ -102,7 +96,6 @@ describe('Check', () => {
   });
 
   test('with parameter position:bottom reveals 1 card from the bottom of the deck', () => {
-    const deck = new Deck();
     const cards = deck.check({position: 'bottom'});
     expect(cards.length).toBe(1);
     expect(deck.cards.length).toBe(52);
@@ -110,14 +103,12 @@ describe('Check', () => {
   });
 
   test('with parameter position:random extracts 1 random card from the deck', () => {
-    const deck = new Deck();
     const cards = deck.check({position: 'random'});
     expect(cards.length).toBe(1);
     expect(deck.cards.length).toBe(52);
   });
 
   test('with parameter position:top, count:3 extracts 3 cards from the top of the deck', () => {
-    const deck = new Deck();
     const cards = deck.check({position: 'top', count: 3});
     expect(cards.length).toBe(3);
     expect(deck.cards.length).toBe(52);
@@ -127,7 +118,6 @@ describe('Check', () => {
   });
 
   test('with parameter position:bottom, count:2 extracts 2 cards from the top of the deck', () => {
-    const deck = new Deck();
     const cards = deck.check({position: 'bottom', count: 2});
     expect(cards.length).toBe(2);
     expect(deck.cards.length).toBe(52);
@@ -138,7 +128,6 @@ describe('Check', () => {
 
 describe('Shuffle', () => {
   test('should relocate the cards that cards should not be at their old positions', () => {
-    const deck = new Deck();
     const cardBeforeShuffleTop = deck.check({position: 'top'})[0];
     const cardBeforeShuffleBtm = deck.check({position: 'bottom'})[0];
 
@@ -152,7 +141,6 @@ describe('Shuffle', () => {
   });
 
   test('should be working with deck which has cards removed', () => {
-    const deck = new Deck();
     const cards = deck.pick({count: 3});
     const deckLength = deck.cards.length;
 
@@ -164,7 +152,6 @@ describe('Shuffle', () => {
 
 describe('Random', () => {
   test('without parameter should return a random integer between 0 and deck length', () => {
-    const deck = new Deck();
     const val = deck.random();
 
     expect(val).toBeGreaterThanOrEqual(0);
@@ -172,7 +159,6 @@ describe('Random', () => {
   });
 
   test('with parameter max:3 should return integer between 0 and 3', () => {
-    const deck = new Deck();
     const MAX_VALUE = 3; 
     const val = deck.random({max: MAX_VALUE});
 
@@ -181,7 +167,6 @@ describe('Random', () => {
   });
   
   test('with parameter min:50 should return integer between 50 and 52', () => {
-    const deck = new Deck();
     const MIN_VALUE = 50;
     const val = deck.random({min: MIN_VALUE});
 
