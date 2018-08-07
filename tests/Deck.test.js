@@ -150,4 +150,14 @@ describe('Shuffle', () => {
     expect(cardBeforeShuffleTop).not.toBe(cardAfterShuffleTop);
     expect(cardBeforeShuffleBtm).not.toBe(cardAfterShuffleBtm);
   });
+
+  test('should be working with deck which has cards removed', () => {
+    const deck = new Deck();
+    const cards = deck.pick({count: 3});
+    const deckLength = deck.cards.length;
+
+    deck.shuffle();
+
+    expect(deck.cards.length).toBe(deckLength);
+  });
 });
