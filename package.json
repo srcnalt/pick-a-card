@@ -1,11 +1,14 @@
 {
   "name": "pick-a-card",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A node package for playing cards.",
   "main": "index.js",
   "scripts": {
     "test": "jest"
   },
+  "keywords": [
+    "gamble", "playing cards", "cards", "poker", "blackjack"
+  ],
   "jest": {
     "testEnvironment": "node"
   },
