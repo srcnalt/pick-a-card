@@ -170,4 +170,13 @@ describe('Random', () => {
     expect(val).toBeGreaterThanOrEqual(0);
     expect(val).toBeLessThan(deck.cards.length);
   });
+
+  test('with parameter max:5 should return integet between 0 and 5', () => {
+    const deck = new Deck();
+    const MAX_VALUE = 5; 
+    const val = deck.random({max: MAX_VALUE});
+
+    expect(val).toBeGreaterThanOrEqual(0);
+    expect(val).toBeLessThan(MAX_VALUE);
+  });
 });
