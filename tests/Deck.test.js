@@ -161,3 +161,13 @@ describe('Shuffle', () => {
     expect(deck.cards.length).toBe(deckLength);
   });
 });
+
+describe('Random', () => {
+  test('without parameter should return a random integer between 0 and deck length', () => {
+    const deck = new Deck();
+    const val = deck.random();
+
+    expect(val).toBeGreaterThanOrEqual(0);
+    expect(val).toBeLessThan(deck.cards.length);
+  });
+});
