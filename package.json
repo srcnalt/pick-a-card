@@ -1,5 +1,5 @@
 {
-  "name": "pickacard",
+  "name": "pick-a-card",
   "version": "1.0.0",
   "description": "A node package for playing cards.",
   "main": "index.js",
