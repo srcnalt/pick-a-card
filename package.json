@@ -1,7 +1,7 @@
 {
   "name": "pickacard",
   "version": "1.0.0",
-  "description": "playing gard generator",
+  "description": "A node package for playing cards.",
   "main": "index.js",
   "scripts": {
     "test": "jest"

@@ -1,2 +1,2 @@
 ## Pick A Card
-A node package about creating, picking and folding cards.
+A node package for playing cards.
