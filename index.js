@@ -1,1 +1,4 @@
-module.exports = require('./classes/Deck');
+module.exports = {
+  Deck: require('./classes/Deck'),
+  Card: require('./classes/Card')
+}
