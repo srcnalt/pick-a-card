@@ -100,4 +100,12 @@ describe('Check', () => {
     expect(deck.cards.length).toBe(52);
     expect(cards[0].face).toBe("ace");
   });
+
+  test('with parameter position:bottom reveals 1 card from the bottom of the deck', () => {
+    const deck = new Deck();
+    const cards = deck.check({position: 'bottom'});
+    expect(cards.length).toBe(1);
+    expect(deck.cards.length).toBe(52);
+    expect(cards[0].face).toBe("king");
+  });
 })
