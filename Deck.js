@@ -81,7 +81,7 @@ class Deck {
     const len = this.cards.length;
 
     for(let i = 0; i < len; i++){
-      cards.push(this.pickOne())
+      cards.push(this.pick())
     }
 
     this.cards = cards;
