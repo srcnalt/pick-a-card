@@ -1,4 +1,4 @@
-const Deck = require('../Deck');
+const Deck = require('../classes/Deck');
 
 describe('Deck', () => {
   test('with parameter creates a deck with jokers', () => {

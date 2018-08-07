@@ -1,4 +1,4 @@
-const Deck = require('../Deck');
+const Deck = require('../classes/Deck');
 
 describe('Card', () => {
   test('should have a string definition', () => {
