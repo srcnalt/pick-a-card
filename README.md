@@ -1,4 +1,4 @@
-## Pick a Card [![Build Status](https://travis-ci.org/srcnalt/pick-a-card.svg?branch=master)](https://travis-ci.org/srcnalt/pick-a-card)
+## Pick a Card [![Build Status](https://travis-ci.org/srcnalt/pick-a-card.svg?branch=master)](https://travis-ci.org/srcnalt/pick-a-card) [![npm version](https://badge.fury.io/js/pick-a-card.svg)](https://badge.fury.io/js/pick-a-card)
 A node package for playing cards.
 
 ### Usage
