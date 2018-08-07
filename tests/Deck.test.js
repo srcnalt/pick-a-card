@@ -135,3 +135,19 @@ describe('Check', () => {
     expect(cards[1].face).toBe("king");
   });
 });
+
+describe('Shuffle', () => {
+  test('should relocate the cards that cards should not be at their old positions', () => {
+    const deck = new Deck();
+    const cardBeforeShuffleTop = deck.check({position: 'top'})[0];
+    const cardBeforeShuffleBtm = deck.check({position: 'bottom'})[0];
+
+    deck.shuffle();
+
+    const cardAfterShuffleTop = deck.check({position: 'top'})[0];
+    const cardAfterShuffleBtm = deck.check({position: 'bottom'})[0];
+
+    expect(cardBeforeShuffleTop).not.toBe(cardAfterShuffleTop);
+    expect(cardBeforeShuffleBtm).not.toBe(cardAfterShuffleBtm);
+  });
+});
