@@ -125,4 +125,13 @@ describe('Check', () => {
     expect(cards[1].face).toBe("2");
     expect(cards[2].face).toBe("3");
   });
-})
+
+  test('with parameter position:bottom, count:2 extracts 2 cards from the top of the deck', () => {
+    const deck = new Deck();
+    const cards = deck.check({position: 'bottom', count: 2});
+    expect(cards.length).toBe(2);
+    expect(deck.cards.length).toBe(52);
+    expect(cards[0].face).toBe("queen");
+    expect(cards[1].face).toBe("king");
+  });
+});
