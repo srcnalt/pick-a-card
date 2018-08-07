@@ -64,7 +64,7 @@ class Deck {
         return this.cards.slice(0, count);
         break;
       case 'bottom':
-        return this.cards.slice(-count, count);
+        return this.cards.slice(-count);
         break
       default:
         let picks = [];

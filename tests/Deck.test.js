@@ -92,4 +92,12 @@ describe('Check', () => {
     expect(cards.length).toBe(3);
     expect(deck.cards.length).toBe(52);
   });
+
+  test('with parameter position:top reveals 1 cards from the top of the deck', () => {
+    const deck = new Deck();
+    const cards = deck.check({position: 'top'});
+    expect(cards.length).toBe(1);
+    expect(deck.cards.length).toBe(52);
+    expect(cards[0].face).toBe("ace");
+  });
 })
