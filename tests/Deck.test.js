@@ -171,12 +171,21 @@ describe('Random', () => {
     expect(val).toBeLessThan(deck.cards.length);
   });
 
-  test('with parameter max:5 should return integet between 0 and 5', () => {
+  test('with parameter max:3 should return integer between 0 and 3', () => {
     const deck = new Deck();
-    const MAX_VALUE = 5; 
+    const MAX_VALUE = 3; 
     const val = deck.random({max: MAX_VALUE});
 
     expect(val).toBeGreaterThanOrEqual(0);
     expect(val).toBeLessThan(MAX_VALUE);
+  });
+  
+  test('with parameter min:50 should return integer between 50 and 52', () => {
+    const deck = new Deck();
+    const MIN_VALUE = 50;
+    const val = deck.random({min: MIN_VALUE});
+
+    expect(val).toBeGreaterThanOrEqual(MIN_VALUE);
+    expect(val).toBeLessThan(deck.cards.length);
   });
 });
