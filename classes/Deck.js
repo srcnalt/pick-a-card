@@ -31,8 +31,13 @@ class Deck {
       this.cards.push(new Card({joker: true}));
     }
   }
-
-  //pick n number of cards randomly or from top 
+  
+  /*
+  * Pick card(s) from the deck
+  * takes one json onject with following optional parameters
+  * @param position: 'top', 'bottom' or by default 'random'. Determines where the cards will be taken.
+  * @param count: number of cards to pick from the deck, 1 by default.
+  */
   pick (args = {}) {
     const position = args.position || 'random';  //top, bottom, random
     const count = args.count || 1;
