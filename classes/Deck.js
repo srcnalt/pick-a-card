@@ -34,7 +34,7 @@ class Deck {
   
   /*
   * Pick card(s) from the deck
-  * takes one json onject with following optional parameters
+  * takes one json object with following optional parameters
   * @param position: 'top', 'bottom' or by default 'random'. Determines where the cards will be taken.
   * @param count: number of cards to pick from the deck, 1 by default.
   */
@@ -58,8 +58,13 @@ class Deck {
         return picks;
     }
   }
-
-  //check n number of cards randomly or from top
+  
+  /*
+  * Checks (reveals) card(s) from the deck
+  * takes one json object with following optional parameters
+  * @param position: 'top', 'bottom' or by default 'random'. Determines where the cards will be revealed from.
+  * @param count: number of cards to check from the deck, 1 by default.
+  */
   check (args = {}) {
     const position = args.position || 'random';
     const count = args.count || 1;
