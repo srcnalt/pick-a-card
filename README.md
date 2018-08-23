@@ -4,7 +4,7 @@ A node package for playing cards.
 ### Usage
 
 #### Initializing
-To install the package run `npm i pick-a-card`
+To install the node package run `npm i pick-a-card`
 
 Requiring the package brings two classes which are `Deck` and `Card`.
 ```js
