@@ -14,9 +14,7 @@
   },
   "author": "Sercan Altundas",
   "license": "ISC",
-  "dependencies": {
-    "merge": ">=1.2.1"
-  },
+  "dependencies": {},
   "devDependencies": {
     "jest": "^23.4.2"
   }
