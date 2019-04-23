@@ -1,7 +1,7 @@
-const Deck = require('../classes/Deck');
+const Deck = require("../classes/Deck");
 
-describe('Card', () => {
-  test('should have a string definition', () => {
+describe("Card", () => {
+  test("should have a string definition", () => {
     const deck = new Deck();
     const card = deck.cards[0];
     const def = card.toString();

@@ -1,4 +1,4 @@
-const Card = require('./Card')
+const Card = require("./Card")
 
 class Deck {  
   constructor (args = {}) {
@@ -35,18 +35,18 @@ class Deck {
   /*
   * Pick card(s) from the deck
   * takes one json object with following optional parameters
-  * @param position: 'top', 'bottom' or by default 'random'. Determines where the cards will be taken.
+  * @param position: "top", "bottom" or by default "random". Determines where the cards will be taken.
   * @param count: number of cards to pick from the deck, 1 by default.
   */
   pick (args = {}) {
-    const position = args.position || 'random';  //top, bottom, random
+    const position = args.position || "random";  //top, bottom, random
     const count = args.count || 1;
     
     switch(position){
-      case 'top':
+      case "top":
         return this.cards.splice(0, count);
         break;
-      case 'bottom':
+      case "bottom":
         return this.cards.splice(-count, count);
         break
       default:
@@ -62,18 +62,18 @@ class Deck {
   /*
   * Checks (reveals) card(s) from the deck
   * takes one json object with following optional parameters
-  * @param position: 'top', 'bottom' or by default 'random'. Determines where the cards will be revealed from.
+  * @param position: "top", "bottom" or by default "random". Determines where the cards will be revealed from.
   * @param count: number of cards to check from the deck, 1 by default.
   */
   check (args = {}) {
-    const position = args.position || 'random';
+    const position = args.position || "random";
     const count = args.count || 1;
 
     switch(position){
-      case 'top':
+      case "top":
         return this.cards.slice(0, count);
         break;
-      case 'bottom':
+      case "bottom":
         return this.cards.slice(-count);
         break
       default:
