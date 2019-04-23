@@ -19,7 +19,7 @@ class Deck {
         const card = new Card({
           suit: this.suits[i],
           face: this.faces[j],
-          value: this.values[j]
+          value: this.values[j],
         });
 
         this.cards.push(card);
@@ -48,7 +48,7 @@ class Deck {
         break;
       case "bottom":
         return this.cards.splice(-count, count);
-        break
+        break;
       default:
         let picks = [];
         for (let i = 0; i < count; i++) {
@@ -75,7 +75,7 @@ class Deck {
         break;
       case "bottom":
         return this.cards.slice(-count);
-        break
+        break;
       default:
         let picks = [];
         for (let i = 0; i < count; i++) {
