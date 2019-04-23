@@ -17,9 +17,9 @@ class Deck {
     for(let i = 0; i < 4; i++) {
       for(let j = 0; j < 13; j++) {
         const card = new Card({
-          suit: this.suits[i],
-          face: this.faces[j],
-          value: this.values[j],
+          suit: this.suits[parseInt(i)],
+          face: this.faces[parseInt(j)],
+          value: this.values[parseInt(j)],
         });
 
         this.cards.push(card);
