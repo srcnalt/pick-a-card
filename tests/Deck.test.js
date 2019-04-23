@@ -166,7 +166,7 @@ describe("Random", () => {
     expect(val).toBeLessThan(MAX_VALUE);
   });
   
-  test"with parameter min:50 should return integer between 50 and 52", () => {
+  test("with parameter min:50 should return integer between 50 and 52", () => {
     const MIN_VALUE = 50;
     const val = deck.random({min: MIN_VALUE});
 
