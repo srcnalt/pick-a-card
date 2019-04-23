@@ -45,10 +45,8 @@ class Deck {
     switch(position){
       case "top":
         return this.cards.splice(0, count);
-        break;
       case "bottom":
         return this.cards.splice(-count, count);
-        break;
       default:
         let picks = [];
         for (let i = 0; i < count; i++) {
@@ -72,10 +70,8 @@ class Deck {
     switch(position){
       case "top":
         return this.cards.slice(0, count);
-        break;
       case "bottom":
         return this.cards.slice(-count);
-        break;
       default:
         let picks = [];
         for (let i = 0; i < count; i++) {
