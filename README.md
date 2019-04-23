@@ -8,7 +8,7 @@ To install the node package run `npm i pick-a-card`
 
 Requiring the package brings two classes which are `Deck` and `Card`.
 ```js
-const {Deck, Card} = require('pick-a-card');
+const {Deck, Card} = require("pick-a-card");
 ```
 
 #### Creating a Deck
@@ -20,14 +20,14 @@ const deckWithJockers = new Deck({jokers: true});
 ```
 
 #### Picking and Checking Cards from the Deck
-Use `pick` and `check` methods of `Deck` instance to extract or reveal a card from the deck. Both methods can have parameters of `position` which are `'random', 'top' and 'bottom'` and `count` which is an integer between 0 and the length of the cards in the deck. After using pick returned Card array is removed from the deck, and after using check the deck does not change.
+Use `pick` and `check` methods of `Deck` instance to extract or reveal a card from the deck. Both methods can have parameters of `position` which are `"random", "top" and "bottom"` and `count` which is an integer between 0 and the length of the cards in the deck. After using pick returned Card array is removed from the deck, and after using check the deck does not change.
 
 ```js
 deck.pick(); //extracts 1 card from a random position.
-deck.pick({position: 'top', count: 3}); //extracts 3 cards from the top of the deck.
+deck.pick({position: "top", count: 3}); //extracts 3 cards from the top of the deck.
 
 deck.check(); //reveal 1 card from a random position.
-deck.check({position: 'bottom', count: 2}); //reveals 2 cards from the bottom of the deck.
+deck.check({position: "bottom", count: 2}); //reveals 2 cards from the bottom of the deck.
 ```
 
 #### Shuffle the Deck
